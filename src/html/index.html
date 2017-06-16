@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>360同城帮 - 手机维修、手机回收、优品</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- 左上角小图标 -->
+	<link rel="shortcut icon" href="http://bang.360.cn/favicon.ico">
+
+	<!-- <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/angular-css.js"></script>
+	<script type="text/javascript" src="js/angular-ui-router.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" href="libs/swiper.min.css">
+</head>
+<body>
+	<!-- 在线咨询 -->
+	<div id="fukuang"><div class="box"></div></div>
+	<!-- 返回顶部 -->
+	<div class="returnToTop" style="display: none;">
+		<a data-text="go_to_top" href="#" style="visibility: visible; bottom: 42px; right: 10px;"></a>
+	</div>
+	<!-- 导航栏 -->
+	<nav>
+		<div class="nav-left">
+			<span style="color: #185;font-size: 14px" class="add">北京</span>
+			<a href="" class="tabcitys">[切换城市]</a>
+			<a href="shouye.html" style="border-right: none">同城帮首页</a>
+		</div>
+		<div class="nav-right">
+			<p class="dl">登录</p>
+			<p class="zc">注册</p>
+			<p class="dd">我的订单</p>
+			<p>在线客服<span> ( 9:00-21:00 ) </span></p>
+			<p>客户服务</p>
+			<p>论坛</p>
+			<p style="border: none;color: red" class="ts">投诉建议</p>
+		</div>
+	</nav>
+	<div id="wrap">
+		<div class="nav2">
+			<!-- 二级导航栏 -->
+			<div class="nav2-tit">
+				<a href="shouye.html" class="logo"><img src="../images/logo.png"></a>
+				<ul>
+					<li><a href="liangpin.html" target="_blank">二手良品</a></li>
+					<li><a href="">手机回收</a></li>
+					<li><a href="">手机维修</a></li>
+					<li><a href="">电脑维修</a></li>
+					<li><a href="">以旧换新</a></li>
+					<li><a href="">手机租用</a></li>
+				</ul>
+				<img src="../images/t01198d7629a60c4940.png" class="hott">
+			</div>
+			 <!-- Swiper -->
+		    <div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide"><img src="../images/l1.png"></div>
+		            <div class="swiper-slide"><img src="../images/l2.png"></div>
+		            <div class="swiper-slide"><img src="../images/l3.jpg"></div>
+		        </div>
+		        <div class="swiper-pagination"></div>
+		    </div>
+			<div class="lists">
+				<ul>
+					<li class="li1">
+					<img src="../images/bssj.png">
+					<span>修手机/Pad</span> 
+					</li>
+					<li class="li2"><img src="../images/bssj.png"><span>修手机/Pad</span></li>
+					<li class="li3"><img src="../images/bssj.png"><span>修手机/Pad</span></li>
+					<li class="li4"><img src="../images/bssj.png"><span>修手机/Pad</span></li>
+				</ul>
+				<div class="box1">1</div>
+				<div class="box2">2</div>
+				<div class="box3">3</div>
+				<div class="box4">4</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="libs/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        // nextButton: '.swiper-button-next',
+        // prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 10,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false//用户操作swiper之后，是否禁止autoplay。默认为true：停止。如果设置为false，用户操作swiper之后自动切换不会停止，每次都会重新启动autoplay。操作包括触碰，拖动，点击pagination等。
+    });
+    </script>
+</html>

@@ -18,8 +18,8 @@ gulp.task("html", function() {
         minifyJS:true,
         minifyCSS:true    
     };
-    gulp.src("src/**/*.html")
-        .pipe(htmlmin(options))
+    gulp.src("src/html/*.html")
+        //.pipe(htmlmin(options))
         .pipe(gulp.dest("dist/"))
         .pipe(browserSync.reload({
           stream: true
@@ -41,14 +41,14 @@ gulp.task('sass', function () {
 //编译图片任务
 gulp.task("imagemin",function(){
     gulp.src("src/images/*.{jpg,png,gif}")
-    .pipe(imagemin())
+    //.pipe(imagemin())
     .pipe(gulp.dest('dist/images'))
 })
 
 //编译js任务
 gulp.task("js",function(){
     gulp.src("src/js/*.js")
-    .pipe(gulpJs())
+    //.pipe(gulpJs())
     .pipe(gulp.dest("dist/js"))
     .pipe(browserSync.reload({
           stream: true
