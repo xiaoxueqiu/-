@@ -66,6 +66,7 @@ gulp.task('servers', function () {
     gulp.watch('src/js/*.js', ['js']);
     gulp.watch('src/scss/*.scss', ['sass']);
     gulp.watch('src/**/*.html', ['html']);
+    gulp.watch('src/images/*.{jpg,png,gif}', ['imagemin']);
 })
 //执行默认任务
 gulp.task('mainTask', ['sass','html','imagemin','js','servers']);

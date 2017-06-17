@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我们只卖原装二手机 - 同城帮优品</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- 左上角小图标 -->
+	<link rel="shortcut icon" href="http://bang.360.cn/favicon.ico">
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/angular-css.js"></script>
+	<script type="text/javascript" src="js/angular-route.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/youpin.css">
+	<link rel="stylesheet" href="libs/swiper.min.css">
+</head>
+<body ng-app="myapp" ng-controller="mycity">
+	<div class="header"><a href=""><img src="../images/t014911b2507734518a.jpg"></a></div>
+	<div id="fukuang"> <div class="box"></div></div>
+	<nav>
+		<div class="nav-left">
+			<a href="shouye.html" target="_blank">同城帮</a>
+			<a href="shangmen.html" target="_blank">上门服务</a>
+			<a href="huishou.html" target="_blank">手机回收</a>
+			<a href="liangpin.html" style="border: none">优品</a>
+		</div>
+		<div class="nav-right">
+			<p class="dd">查询订单</p>
+			<p><a href="help.html">帮助中心</a></p>
+			<p style="border: none">在线客服<span> ( 9:00-21:00 ) </span></p>
+		</div>
+	</nav>
+	<div id="wrap">	
+		<div class="nav2-tit">
+			<a href="liangpin.html" class="logo"><img src="../images/t014ddd38bd61af1faf.jpg"></a>
+			<ul>
+				<li><a href="liangpin.html" target="_blank" style="color:#185">优品</a></li>
+				<li><a href="huanxin.html" target="_blank">以旧换新</a></li>
+				<li><a href="shengji.html" target="_blank">手机升级</a></li>
+				<li><a href="qiye.html">企业采购</a></li>
+			</ul>
+			<input type="text" name="" class="txt"><img src="../images/sou.png" class="sou"> 
+			<p class="x-tit"><a href="">iPhone 6</a> <a href="">iPhone 6P</a></p>
+			<div class="min-box"><p>iPhone 6</p><p>iPhone 6P</p></div>
+		</div>
+		<div class="nav2">
+			<!-- 轮播图 -->
+		    <div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide"><a href="" target="_blank"><img src="../images/l1.png"></a></div>
+		            <div class="swiper-slide"><a href="" target="_blank"><img src="../images/l2.png"></a></div>
+		            <div class="swiper-slide"><a href="" target="_blank"><img src="../images/l3.jpg"></a></div>
+		            <div class="swiper-slide"><a href="" target="_blank"><img src="../images/l3.jpg"></a></div>
+		        </div>
+		        <div class="swiper-pagination"></div>
+		        <!-- 轮播上的列表 -->
+				<div class="lists">
+					<h3>热门品牌</h3>
+					<div class="lists-cate">
+						<div class="item">苹果</div>
+						<div class="item">苹果</div>
+						<div class="item">苹果</div>
+						<div class="item">苹果</div>
+						<div class="item">苹果</div>
+					</div>
+					<h3>外观成色</h3>
+					<div class="lists-cate">
+						<div class="item">苹果</div>
+						<div class="item">苹果</div>
+						<div class="item">苹果</div>
+						<div class="item">苹果</div>
+						<div class="item">苹果</div>
+					</div> 
+					<h3>价格预算</h3> 
+					<div class="lists-cate">
+						<div class="item">苹果</div>
+						<div class="item">苹果</div>
+						<div class="item">苹果</div>
+					</div>
+				</div>
+				<a href="desc.html" target="_blank" class="baozheng"><img src="https://p.ssl.qhimg.com/t01309089c890d5d216.png"></a>
+			</div>
+		</div>	    
+	</div>
+	<div class="slide-wrap">
+		<div class="slide-inner">
+			<div ng-repeat="item in arr1" class="slide-item">
+				<img src="{{item.product_img}}">
+				<div class="slide-txt">
+					<p>{{item.product_name}}</p>
+					<p>{{item.service_desc1}}</p>
+					<p>{{item.product_price}}</p>
+					<p>{{item.shop_id}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="left-1"></div>
+		<div class="right-1"></div>
+		<div class="lunbo2">
+			
+		</div>	
+	</div>
+</body>
+<script src="libs/swiper.min.js"></script>
+<script type="text/javascript" src="js/youpin.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        // nextButton: '.swiper-button-next',
+        // prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 10,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false//用户操作swiper之后，是否禁止autoplay。默认为true：停止。如果设置为false，用户操作swiper之后自动切换不会停止，每次都会重新启动autoplay。操作包括触碰，拖动，点击pagination等。
+    });
+    </script>
+</html>

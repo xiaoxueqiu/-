@@ -6,11 +6,14 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<!-- 左上角小图标 -->
 	<link rel="shortcut icon" href="http://bang.360.cn/favicon.ico">
+	
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	
 
-	<!-- <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-	<script type="text/javascript" src="js/angular.js"></script>
+	<!-- <script type="text/javascript" src="js/angular.js"></script>
 	<script type="text/javascript" src="js/angular-css.js"></script>
-	<script type="text/javascript" src="js/angular-ui-router.js"></script> -->
+	<script type="text/javascript" src="js/angular-route.js"></script> -->
+	
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" href="libs/swiper.min.css">
 </head>
@@ -33,18 +36,20 @@
 			<p class="zc">注册</p>
 			<p class="dd">我的订单</p>
 			<p>在线客服<span> ( 9:00-21:00 ) </span></p>
-			<p>客户服务</p>
+			<p class="user">客户服务</p>
 			<p>论坛</p>
 			<p style="border: none;color: red" class="ts">投诉建议</p>
 		</div>
 	</nav>
+	<!-- 客户服务 -->
+	<p class="sub"> <a target="_blank" href="http://bang.360.cn/help/">帮助中心</a> <br> <a target="_blank" href="/shangmen/pay">维修付款</a></p>
 	<div id="wrap">
 		<div class="nav2">
 			<!-- 二级导航栏 -->
 			<div class="nav2-tit">
 				<a href="shouye.html" class="logo"><img src="../images/logo.png"></a>
 				<ul>
-					<li><a href="liangpin.html" target="_blank">二手良品</a></li>
+					<li><a href="youpin.html" target="_blank">优品</a></li>
 					<li><a href="">手机回收</a></li>
 					<li><a href="">手机维修</a></li>
 					<li><a href="">电脑维修</a></li>
@@ -53,34 +58,245 @@
 				</ul>
 				<img src="../images/t01198d7629a60c4940.png" class="hott">
 			</div>
-			 <!-- Swiper -->
+			 <!-- 轮播图 -->
 		    <div class="swiper-container">
 		        <div class="swiper-wrapper">
-		            <div class="swiper-slide"><img src="../images/l1.png"></div>
-		            <div class="swiper-slide"><img src="../images/l2.png"></div>
-		            <div class="swiper-slide"><img src="../images/l3.jpg"></div>
+		            <div class="swiper-slide"><a href="" target="_blank"><img src="../images/l1.png"></a></div>
+		            <div class="swiper-slide"><a href="" target="_blank"><img src="../images/l2.png"></a></div>
+		            <div class="swiper-slide"><a href="" target="_blank"><img src="../images/l3.jpg"></a></div>
 		        </div>
 		        <div class="swiper-pagination"></div>
+		        <!-- 轮播上的列表 -->
+				<div class="lists">
+					<ul>
+						<li class="li1"><img src="../images/bssj.png" style="top:35px;"><span>修手机/Pad</span></li>
+						<li class="li2"><img src="../images/bssj.png" style="top:120px;"><span>修电脑</span></li>
+						<li class="li3"><img src="../images/bssj.png" style="top:205px;"><span>卖手机/电脑</span></li>
+						<li class="li4"><img src="../images/bssj.png" style="top:290px;"><span>买二手机</span></li>
+					</ul>
+					<div class="box1">1</div>
+					<div class="box2">2</div>
+					<div class="box3">3</div>
+					<div class="box4">4</div>
+				</div>
 		    </div>
-			<div class="lists">
+		</div>
+	</div>
+	<div id="cla-wrap">
+		<div class="main-wrap">
+			<div class="main-img">
 				<ul>
-					<li class="li1">
-					<img src="../images/bssj.png">
-					<span>修手机/Pad</span> 
-					</li>
-					<li class="li2"><img src="../images/bssj.png"><span>修手机/Pad</span></li>
-					<li class="li3"><img src="../images/bssj.png"><span>修手机/Pad</span></li>
-					<li class="li4"><img src="../images/bssj.png"><span>修手机/Pad</span></li>
+					<li><a href="" target="_blank"><img src="../images/b (2).jpg"></a></li>
+					<li><a href="" target="_blank"><img src="../images/b (1).jpg"></a></li>
+					<li><a href="" target="_blank"><img src="../images/d (2).jpg"></a></li>
+					<li><a href="" target="_blank"><img src="../images/d (1).jpg"></a></li>
 				</ul>
-				<div class="box1">1</div>
-				<div class="box2">2</div>
-				<div class="box3">3</div>
-				<div class="box4">4</div>
+			</div>
+			<div class="hot">
+				<div class="hot-tit">
+					<p>热门手机回收</p>
+					<a href="" class="more">查看更多<img src="../images/more_03.png" alt=""></a>
+				</div>
+				<div class="hot-cont">
+					<a href="" class="tit-img"><img src="../images/lu.png"></a>
+					<ul>
+						<li><a href=""><img src="../images/11.jpg"><p>苹果iPhone 6</p></a></li>
+						<li><a href=""><img src="../images/12.jpg"><p>苹果iPhone 6</p></a></li>
+						<li><a href=""><img src="../images/13.jpg"><p>苹果iPhone 6</p></a></li>
+						<li><a href=""><img src="../images/14.jpg"><p>苹果iPhone 6</p></a></li>
+						<li style="border: none"><a href=""><img src="../images/15.jpg"></a><p>苹果iPhone 6</p></li>
+					</ul>
+				</div>
+			</div>
+			<div class="hot">
+				<div class="hot-tit">
+					<p>二手良品精选</p>
+					<a href="" class="more">查看更多<img src="../images/more_03.png" alt=""></a>
+				</div>
+				<div class="hot-cont">
+					<a href="" class="tit-img"><img src="../images/blue.png"></a>
+					<ul>
+						<li><a href=""><img src="../images/a (3).png"><p>苹果iPhone 6</p></a></li>
+						<li><a href=""><img src="../images/a (1).jpg"><p>苹果iPhone 6</p></a></li>
+						<li><a href=""><img src="../images/a (2).jpg"><p>苹果iPhone 6</p></a></li>
+						<li><a href=""><img src="../images/a (1).png"><p>苹果iPhone 6</p></a></li>
+						<li style="border: none"><a href=""><img src="../images/a (2).png"></a><p>苹果iPhone 6</p></li>
+					</ul>
+				</div>
+			</div>
+			<div class="hot-tit">
+				<p>到店维修</p>
+			</div>
+		</div>
+	</div>
+	<div id="shopp-wrap">
+		<div class="shop">
+			<div class="shop-left">
+				<div class="sousuo">
+					<p style="margin-left: 0" id="a1111" class="add2">北京<span id="add2"></span></p>
+					<p>选择区县<span class="xzqx"></span></p>
+					<p style="width: 585px;border: none"><input type="text" name="" class="txt" placeholder="请输入您的位置查找附近的商家" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的位置查找附近的商家'"><input type="submit" name="" class="sub11" value="搜索"></p>
+				</div>
+				<div class="order">
+					<ul>
+						<li style="background-color: #fff;border-right: 1px solid #d6d6d6;color:#185">默认排序</li>
+						<li>按成交量</li>
+						<li>按人气</li>
+					</ul>
+					<span class="che"><input type="checkbox" name="">先行赔付</span>
+				</div>
+				<div class="dianpu"> </div>
+				<div class="huanye"> </div>
+			</div>
+			<div class="shop-right">
+				<p class="shop-tit">商家好评榜</p>
+			</div>
+			<div class="bot-box">可以搜索您所在的小区、写字楼或标志性建筑</div>
+		</div>
+	</div>
+	<div id="fooder"> 
+		<div class="fooder-t"> 
+			<ul> 
+				<li class="lis">
+					<div class="head"><p class="t1">购物指南</p></div> 
+					<ul class="lianjie">
+						<li><a href="">购物流程</a></li>
+						<li><a href="">用户注册</a></li>
+						<li><a href="">帮助文档</a></li>
+					</ul>
+				</li>
+				<li class="lis"> 
+					<div class="head1"><p class="t1">支付方式</p></div> 
+					<ul class="lianjie">
+						<li><a href="">在线支付</a></li>
+						<li><a href="">当面付款</a></li>
+					</ul>
+				</li>
+				<li class="lis"> 
+					<div class="head2"><p class="t1">售后服务</p></div> 
+					<ul class="lianjie">
+						<li><a href="">投诉建议</a></li>
+					</ul>
+				</li>
+				<li class="lis"> 
+					<div class="head3"><p class="t1">特色保障</p></div> 
+					<ul class="lianjie">
+						<li><a href="">360担保支付</a></li>
+					</ul>
+				</li>
+				<li class="lis"> 
+					<div class="head4"><p class="t1">商家合作</p></div> 
+					<ul class="lianjie">
+						<li><a href="" style="color:#4ba0f8">加盟同城帮</a></li>
+						<li><a href="">新闻采访/跨界合作</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<p class="p1">客服电话：4000-399-360 / 010-53767360&nbsp;&nbsp;<a href="">投诉建议</a>&nbsp;&nbsp;<a href="">网站地图</a></p>
+		<p class="p1">Copyright&copy;2005-2017 360.CN All Rights Reserved 360安全中心</p>
+		<p class="p1"><a href="">京ICP备08010314号-19</a> 京公网安备110000000006号</p>
+	</div>
+	<!--点击后出现的弹窗-->
+	<!--点击切换城市出现的弹窗-->
+	<div class="citybox"> 
+		<p>城市列表</p>
+		<img src="../images/close.png" class="close">
+		<div class="citys"> 
+			<ul class="citys-lis"> 
+				<li>热门</li>
+				<li>
+					<span>北京</span>
+					<span>上海</span>
+					<span>广州</span>
+					<span>天津</span> 
+					<span>西安</span> 
+					<span>深圳</span> 
+					<span>武汉</span> 
+					<span>成都</span> 
+					<span>重庆</span></br> 
+					<span>南京</span> 
+					<span>沈阳</span> 
+					<span>杭州</span> 
+					<span>济南</span> 
+					<span>郑州</span> 
+					<span>青岛</span> 
+					<span>苏州</span>  
+				</li>		
+			</ul>
+			<ul class="citys-lis2"> 
+				<li style="clear:left">拼音</li>
+				<li style="width:372px"> 
+					<p id="zimu"> 
+						<span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>W</span><span>X</span><span>Y</span><span>Z</span>
+					</p>
+					<p id="city"></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--点击登录出现的弹窗-->
+	<div id="dl-wrap"> 
+		<div class="dl-box"> 
+			<div class="dl-box-tit"> 
+				<span>欢迎登录360同城帮</span>
+				<div class="close00"></div>
+			</div>
+			<div class="xinxi"> 
+				<p><lebal>账 &nbsp;&nbsp;号</lebal> &nbsp;&nbsp;<input type="text" class="inp" placeholder="手机号/用户名/邮箱" id="focu"></p>
+				<p><lebal>密 &nbsp;&nbsp;码</lebal> &nbsp;&nbsp;<input type="password" class="inp" placeholder="请输入您的密码"></p>
+				<p class="check"><input type="checkbox"> 下次自动登录</p>
+				<p class="liji"></p>
+				<div class="qita">
+					<ul>
+						<li>其他账号登录：</li>
+						<li class="l1"></li> 
+						<li class="l2"></li> 
+						<li class="l3"></li> 
+						<li class="l4"></li> 
+					</ul>
+				</div>
+			</div>
+			<div class="fool"> 
+				<span class="z1">注册新账号</span>
+				<span class="z2"> &nbsp;&nbsp;| &nbsp;&nbsp;</span>
+				<span class="z3">忘记密码？</span>
+			</div>
+		</div>
+	</div>
+	<!-- 点击注册出现的弹窗 -->
+	<div id="zc-wrap"> 
+		<div class="zc-box"> 
+			<div class="zc-box-tit"> 
+				<span>欢迎注册360同城帮</span>
+				<div class="close11"></div>
+			</div>
+		</div>
+	</div>
+	<!-- 点击我的订单出现的弹窗 -->
+	<div id="dd-wrap"> 
+		<div class="dd-box"> 
+			<p class="close22"></p>
+			<img src="../images/erweima.png">
+			<p style="color:#185">使用微信扫描二维码查看订单</p>
+		</div>
+	</div>
+	<!-- 点击投诉建议出现的弹窗 -->	
+	<div id="ts-wrap"> 
+		<div class="ts-box">
+			<div class="ts-box-tit">
+				<p class="ts-tx">投诉建议</p>
+				<p class="close33"></p>
+			</div>
+			<div class="ts-box-con"> 
+				<p>您好，如对我们的服务意见或建议，请发邮件至：<a href="tcb-fankui@bang.360.cn">tcb-fankui@bang.360.cn</a>详细说明</p>
+				<input type="button" value="确定" class="qd">
 			</div>
 		</div>
 	</div>
 </body>
 <script src="libs/swiper.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
