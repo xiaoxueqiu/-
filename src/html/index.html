@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
 	<title>360同城帮 - 手机维修、手机回收、优品</title>
@@ -7,17 +7,19 @@
 	<!-- 左上角小图标 -->
 	<link rel="shortcut icon" href="http://bang.360.cn/favicon.ico">
 	
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 	
 
-	<!-- <script type="text/javascript" src="js/angular.js"></script>
-	<script type="text/javascript" src="js/angular-css.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<!-- <script type="text/javascript" src="js/angular-css.js"></script>
 	<script type="text/javascript" src="js/angular-route.js"></script> -->
 	
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<!-- 轮播插件 -->
 	<link rel="stylesheet" href="libs/swiper.min.css">
+	
 </head>
-<body>
+<body ng-controller="myController">
 	<!-- 在线咨询 -->
 	<div id="fukuang"><div class="box"></div></div>
 	<!-- 返回顶部 -->
@@ -29,7 +31,7 @@
 		<div class="nav-left">
 			<span style="color: #185;font-size: 14px" class="add">北京</span>
 			<a href="" class="tabcitys">[切换城市]</a>
-			<a href="shouye.html" style="border-right: none">同城帮首页</a>
+			<a href="index.html" style="border-right: none">同城帮首页</a>
 		</div>
 		<div class="nav-right">
 			<p class="dl">登录</p>
@@ -61,18 +63,18 @@
 			 <!-- 轮播图 -->
 		    <div class="swiper-container">
 		        <div class="swiper-wrapper">
-		            <div class="swiper-slide"><a href="" target="_blank"><img src="../images/l1.png"></a></div>
-		            <div class="swiper-slide"><a href="" target="_blank"><img src="../images/l2.png"></a></div>
-		            <div class="swiper-slide"><a href="" target="_blank"><img src="../images/l3.jpg"></a></div>
+		            <div class="swiper-slide"><a href="http://bang.360.cn/liangpin/erhuo" target="_blank"><img src="../images/l1.png"></a></div>
+		            <div class="swiper-slide"><a href="http://bang.360.cn/liangpin/samsung" target="_blank"><img src="../images/l2.png"></a></div>
+		            <div class="swiper-slide"><a href="http://bang.360.cn/liangpin/mianxi" target="_blank"><img src="../images/l3.jpg"></a></div>
 		        </div>
 		        <div class="swiper-pagination"></div>
 		        <!-- 轮播上的列表 -->
 				<div class="lists">
 					<ul>
-						<li class="li1"><img src="../images/bssj.png" style="top:35px;"><span>修手机/Pad</span></li>
-						<li class="li2"><img src="../images/bssj.png" style="top:120px;"><span>修电脑</span></li>
-						<li class="li3"><img src="../images/bssj.png" style="top:205px;"><span>卖手机/电脑</span></li>
-						<li class="li4"><img src="../images/bssj.png" style="top:290px;"><span>买二手机</span></li>
+						<li class="li1"><a href="http://www.bang.360.cn/shangmen/mobile?from=index" target="_blank"><img src="../images/bssj.png" style="top:35px;"><span>修手机/Pad</span></a></li>
+						<li class="li2"><a href="http://www.bang.360.cn/shangmen/pc?from=index" target="_blank"><img src="../images/bssj.png" style="top:120px;"><span>修电脑</span></a></li>
+						<li class="li3"><a href="http://www.bang.360.cn/huishou?from=index" target="_blank"><img src="../images/bssj.png" style="top:205px;"><span>卖手机/电脑</span></a></li>
+						<li class="li4"><a href="http://www.bang.360.cn/youpin?from=index" target="_blank"><img src="../images/bssj.png" style="top:290px;"><span>买二手机</span></a></li>
 					</ul>
 					<div class="box1">1</div>
 					<div class="box2">2</div>
@@ -86,41 +88,41 @@
 		<div class="main-wrap">
 			<div class="main-img">
 				<ul>
-					<li><a href="" target="_blank"><img src="../images/b (2).jpg"></a></li>
-					<li><a href="" target="_blank"><img src="../images/b (1).jpg"></a></li>
-					<li><a href="" target="_blank"><img src="../images/d (2).jpg"></a></li>
-					<li><a href="" target="_blank"><img src="../images/d (1).jpg"></a></li>
+					<li><a href="http://www.bang.360.cn/shangmen/order?f_type=mobile&yy_type=2&fault_id=10&showdetail=1&from=index" target="_blank"><img src="../images/b (2).jpg"></a></li>
+					<li><a href="http://www.bang.360.cn/xiu/battery?from=index" target="_blank"><img src="../images/b (1).jpg"></a></li>
+					<li><a href="http://www.bang.360.cn/huanxin/kindle?from=index" target="_blank"><img src="../images/d (2).jpg"></a></li>
+					<li><a href="http://www.bang.360.cn/youpin/shengji?from=index" target="_blank"><img src="../images/d (1).jpg"></a></li>
 				</ul>
 			</div>
 			<div class="hot">
 				<div class="hot-tit">
 					<p>热门手机回收</p>
-					<a href="" class="more">查看更多<img src="../images/more_03.png" alt=""></a>
+					<a href="http://www.bang.360.cn/huishou?from=index" target="_blank" class="more">查看更多<img src="../images/more_03.png" alt=""></a>
 				</div>
 				<div class="hot-cont">
-					<a href="" class="tit-img"><img src="../images/lu.png"></a>
+					<a href="http://www.bang.360.cn/huishou?from=index" target="_blank" class="tit-img"><img src="../images/lu.png"></a>
 					<ul>
 						<li><a href=""><img src="../images/11.jpg"><p>苹果iPhone 6</p></a></li>
-						<li><a href=""><img src="../images/12.jpg"><p>苹果iPhone 6</p></a></li>
-						<li><a href=""><img src="../images/13.jpg"><p>苹果iPhone 6</p></a></li>
-						<li><a href=""><img src="../images/14.jpg"><p>苹果iPhone 6</p></a></li>
-						<li style="border: none"><a href=""><img src="../images/15.jpg"></a><p>苹果iPhone 6</p></li>
+						<li><a href=""><img src="../images/12.jpg"><p>苹果iPhone 5s</p></a></li>
+						<li><a href=""><img src="../images/13.jpg"><p>小米 M4</p></a></li>
+						<li><a href=""><img src="../images/14.jpg"><p>华为 Mate 7</p></a></li>
+						<li style="border: none"><a href=""><img src="../images/15.jpg"></a><p>魅族 MX5</p></li>
 					</ul>
 				</div>
 			</div>
 			<div class="hot">
 				<div class="hot-tit">
-					<p>二手良品精选</p>
-					<a href="" class="more">查看更多<img src="../images/more_03.png" alt=""></a>
+					<p>优品精选</p>
+					<a href="http://www.bang.360.cn/youpin/search?from=index" target="_blank" class="more">查看更多<img src="../images/more_03.png" alt=""></a>
 				</div>
 				<div class="hot-cont">
 					<a href="" class="tit-img"><img src="../images/blue.png"></a>
 					<ul>
-						<li><a href=""><img src="../images/a (3).png"><p>苹果iPhone 6</p></a></li>
-						<li><a href=""><img src="../images/a (1).jpg"><p>苹果iPhone 6</p></a></li>
-						<li><a href=""><img src="../images/a (2).jpg"><p>苹果iPhone 6</p></a></li>
-						<li><a href=""><img src="../images/a (1).png"><p>苹果iPhone 6</p></a></li>
-						<li style="border: none"><a href=""><img src="../images/a (2).png"></a><p>苹果iPhone 6</p></li>
+						<li><a href=""><img src="../images/a (3).png"><p>华为 P9 Plus</p></a></li>
+						<li><a href=""><img src="../images/a (1).jpg"><p>三星 Galaxy S7 Edge</p></a></li>
+						<li><a href=""><img src="../images/a (2).jpg"><p>华为 P8</p></a></li>
+						<li><a href=""><img src="../images/a (1).png"><p>华为 P9</p></a></li>
+						<li style="border: none"><a href=""><img src="../images/a (2).png"></a><p>小米 红米2</p></li>
 					</ul>
 				</div>
 			</div>
@@ -129,27 +131,70 @@
 			</div>
 		</div>
 	</div>
+	<div class="mengban"></div>
 	<div id="shopp-wrap">
 		<div class="shop">
 			<div class="shop-left">
 				<div class="sousuo">
 					<p style="margin-left: 0" id="a1111" class="add2">北京<span id="add2"></span></p>
 					<p>选择区县<span class="xzqx"></span></p>
-					<p style="width: 585px;border: none"><input type="text" name="" class="txt" placeholder="请输入您的位置查找附近的商家" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的位置查找附近的商家'"><input type="submit" name="" class="sub11" value="搜索"></p>
+					<p style="width: 585px;border: none"><input type="text" name="" class="txt" placeholder="请输入您的位置查找附近的商家" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的位置查找附近的商家'"><input type="submit" name="" class="sub11" value="搜索">
+					</p>
+					<ul id="uls">
+       
+    				</ul>
 				</div>
 				<div class="order">
 					<ul>
-						<li style="background-color: #fff;border-right: 1px solid #d6d6d6;color:#185">默认排序</li>
-						<li>按成交量</li>
-						<li>按人气</li>
+						<li style="background-color: #fff;border-right: 1px solid #d6d6d6;color:#185" ng-click="rep()">默认排序</li>
+						<li ng-click="top()">按成交量</li>
+						<li ng-click="hot()">按人气</li>
 					</ul>
 					<span class="che"><input type="checkbox" name="">先行赔付</span>
+					<a hidefocus="true" href="#" class="btn-mode-map">地图模式</a>
+					
 				</div>
-				<div class="dianpu"> </div>
-				<div class="huanye"> </div>
+				<div class="dianpu"> 
+					<ul>
+						<li ng-repeat="item in arr | orderBy:order" class="lis" ng-mouseenter="show0()" ng-mouseleave="hide0()">
+							<div class='sh1'><img ng-src="{{item.shop_ico}}"/></div>
+							<div class='sh2'>
+								<h3 class='s1'>
+									<a href="" title="{{item.shop_name}}" class='s2'>{{item.shop_name}}</a>
+									<a href="" title="{{item.level}}级" class='s3'>店铺等级：{{item.level}}</a>
+								</h3>
+								<p class='s4'>主营：{{item.shop_desc}}</p>
+								<p class='s4'>地址：{{item.addr}}</p>
+							</div>
+							<div class="sh3">
+								<p><img src="https://p.ssl.qhimg.com/t01dddbd1775cf1d1d7.png">先行赔付</p>
+								<p><img src="https://p.ssl.qhimg.com/t0141b1afb0bd0d7e2e.png">同城帮认证</p>
+								<p class='s5' ng-show="flag">成交量：{{item.order_count}}次成交 </p>
+								<p class='s5' ng-hide="flag">人气：{{item.shop_visit}}次浏览 </p>
+							</div>
+							<a href='{{item.shop_addr}}' class="shopping">进入店铺</a>
+						</li>
+					</ul>
+				</div>
+				<!-- fenye -->
+				<div class="huanye">
+					
+				</div>
 			</div>
 			<div class="shop-right">
 				<p class="shop-tit">商家好评榜</p>
+				<ul>
+					<li ng-repeat="item in arr track by $index">
+						<div class='sho1'>{{item.num+$index}}</div>
+						<div class='sho2'>
+							<img ng-src='{{item.shop_ico}}'/>
+						</div>
+						<div class='soo1'>
+							<p class="na1">{{item.shop_name}}</p>
+							<p>{{item.order_count}}条评论</p>
+						</div>
+					</li>
+				</ul>
 			</div>
 			<div class="bot-box">可以搜索您所在的小区、写字楼或标志性建筑</div>
 		</div>

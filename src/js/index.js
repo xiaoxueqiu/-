@@ -99,30 +99,33 @@ $(".close").click(function(){
 		})
 	});*/
 
-//分页
-	for (var i = 1; i < 11; i++) {
-		var span = $("<span class='fenye'>"+i+"</span>");
-		span.appendTo($(".huanye"));
-	}
-	var span1 = $("<span>下一页</span>");
-	span1.appendTo($(".huanye"));
-	var span2 = $("<span>上一页</span>");
-	span.insertBefore(span2);
-
-
 //输入框聚焦时
 	$(".txt").focus(function(){
 		$(".bot-box").show();
+		$("#uls").show();
+		$(".txt").on('keydown',function(){
+			$.ajax({
+				url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+$(".txt").val(),
+				type:'get',
+				dataType:'jsonp',
+				jsonp:'cb'
+			})
+			.done(function(data){
+				$("#uls li").remove();
+				console.log(data);
+				var all = data.s.length;
+				for (var i = 0; i < all; i++) {
+					var lis = $('<li>'+data.s[i]+'</li>');
+					lis.appendTo($("#uls"));
+					
+				}	
+			})
+		})
 	});
+	// 失焦时
 	$(".txt").blur(function(){
 		$(".bot-box").hide();
-	});
-
-	$(".order li").each(function(index){
-		$(".order li").eq(index).click(function(){
-			$(".order li").css('background-color','#f7f7f7').css('border-right','').css('color','#666');
-			$(this).css('background-color','#fff').css('color','#185').css('border-right','1px solid #d6d6d6').css('border-left','1px solid #d6d6d6');
-		})
+		$("#uls").hide();
 	});
 
 
@@ -164,37 +167,101 @@ $(".close").click(function(){
 	$(".close33").click(function(){
 		$("#ts-wrap").hide();
 	});
+//地图模式
+$(".btn-mode-map").click(function(){
+	$(".mengban").show();
+});
+$(".mengban").click(function(){
+	$(this).hide();
+});
 
-//获取店铺数据
-	$.get('../data/1.json',{},function(data){
-		for(var i=0;i<data.shop_data.length;i++){
-			var img = data.shop_data[i].shop_ico;
-			var name = data.shop_data[i].shop_name;
-			var main = data.shop_data[i].main;	
-			var add = data.shop_data[i].addr;
-			var add2 = data.shop_data[i].shop_addr;
-			var lev = data.shop_data[i].level;
-			var pec = data.shop_data[i].shop_visit;
-			var p8 = data.shop_data[i].order_count;
-			var ul = $("<ul><li class='sh1'><img src='"+img+"' /></li><li class='sh2'><p class='s1'>"+name+"<span>&emsp;店铺等级："+lev+"</span></p><p class='s2'>主营："+main+"</p><span class='s3'>地址："+add+"</span><span class='s4'>人气："+pec+"次浏览</span></li><li class='sh3'><a href='"+add2+"'>进入店铺</a></li></ul>")	
-			ul.appendTo($(".dianpu"));
-			//鼠标移入
-			ul.on("mouseover",function(){
-	            $(this).children().last($("li")).show();
-	            $(this).css("background","#eee");
-			})
-			//鼠标移出			
-			ul.on("mouseout",function(){
-	            $(".sh3").hide();
-	            $(this).css("background","");
-			})
-
-			$("<ul><li class='sho1'>"+(i+1)+"</li><li class='sho2'><img src='"+img+"' /></li><li class='soo1'><p>"+name+"</p><p>"+p8+"条评论</p></li></ul>").appendTo($(".shop-right"));
-			if(i<3){
-	            $(".sho1").css("color","#fc6621").css("border","2px solid #fc6621");
-			}
+//angular获取店铺数据
+var app = angular.module('myApp', []);
+app.controller('myController', ['$scope','$http',function($scope,$http){	
+	$http.get('data/1.json').then(function(res){
+		$scope.arr = res.data.shop_data;
+		for (var i = 0; i < $scope.arr.length; i++) {
+			$scope.arr[i].order_count=parseInt($scope.arr[i].order_count);
+			$scope.arr[i].shop_visit=parseInt($scope.arr[i].shop_visit);
 		}
-	},'json')
+	    //默认
+	    $scope.rep = function(){
+	        $scope.order = '';
+	    }
+		//按成交量
+		$scope.top = function(){
+	        $scope.order = '-order_count';
+	        $scope.flag = true;
+	    }
+	    //按人气
+	    $scope.hot = function(){
+	        $scope.order = '-shop_visit';
+	        $scope.flag = false;
+	    }
+	    //鼠标滑过显示
+		$scope.show0 = function(){
+			$(".lis").eq(this.$index).css("background","#fafafa");
+			$(".shopping").eq(this.$index).show();
+		}
+		//鼠标滑出消失
+		$scope.hide0 = function(){
+			$(".lis").eq(this.$index).css("background","");
+			$(".shopping").eq(this.$index).hide();
+		}
+		for(var i=0; i<$scope.arr.length;i++){
+          	$scope.arr[i].num =1;
+          }
+	});
+	
+	$(".order li").each(function(index){
+		$(".order li").eq(index).click(function(){
+			$(".order li").css('background-color','#f7f7f7').css('border-right','').css('color','#666');
+			$(this).css('background-color','#fff').css('color','#185').css('border-right','1px solid #d6d6d6').css('border-left','1px solid #d6d6d6');
+		})
+	});
+
+	//数据
+	$scope.shujuArr = ['data/1.json','data/2.json','data/3.json','data/4.json','data/5.json','data/6.json','data/7.json'];
+	//点击分类列表
+
+
+	//分页
+	for (var i = 1; i < 11; i++) {
+		var span = $("<span class='fenye'>"+i+"</span>");
+		span.appendTo($(".huanye"));
+	}
+	var span1 = $("<p class='past'>下一页</p>");
+	span1.appendTo($(".huanye"));
+	var span2 = $("<p class='topy'>上一页</p>");
+	span2.insertBefore($(".huanye span:first"));
+	$(".huanye span:first").css("background","#FC6621").css("border-color","#FC6621").css("color","#fff")
+	
+	$scope.col = $(".huanye span");
+	$scope.col.click(function () {
+		for (var i = 0; i < $scope.col.length; i++) {
+			$scope.col[i].index = i;
+			//console.log($scope.col[0]);
+			$scope.col.css({
+				color:'#000',
+				background:"#fff",
+				borderColor:"#ccc"
+			})
+			$scope.col.attr('bol','false');
+			if ($scope.col[i].index!=0) {
+				$(".topy").show();
+			}else{
+				$(".topy").hide();
+			}
+		}  
+		$(this).css({
+			color:"#fff",
+			background:"#FC6621",
+			borderColor:"#FC6621"
+		})
+		$(this).attr('bol','true');
+	})
+
+}]);
 
 $(document).on('scroll',function(){
     var _top = $(document).scrollTop();

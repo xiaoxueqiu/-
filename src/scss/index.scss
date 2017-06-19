@@ -151,6 +151,7 @@ nav{
 				}
 			}
 		}
+		// 轮播图
 		.swiper-container{
 			width: 100%;
 			height: 340px;
@@ -312,6 +313,17 @@ nav{
 		}
 	}	
 }
+.mengban{
+	width:100%;
+	height:100%;
+	background:url(../images/ditu.png) no-repeat center center;
+	background-color:rgba(0,0,0,0.6);
+	position:fixed;
+	top: 0;
+	left:0;
+	z-index:4500;
+	display:none;
+}
 #shopp-wrap{
 	width: 100%;
 	.shop{
@@ -325,6 +337,7 @@ nav{
 			.sousuo{
 				width: 100%;
 				height: 82px;
+				position:relative;
 				p{
 					float: left;
 					width: 142px;
@@ -358,6 +371,18 @@ nav{
 					color:#fff;
 					font-size:18px;
 				}
+				#uls{
+					position:absolute;
+					top:65px;
+					left:300px;
+					width: 467px;
+					display: none;
+					background-color:#fff;
+					padding-left:15px;
+					border: 1px solid #185;
+					box-sizing: border-box;
+					z-index: 1234;
+				}
 			}
 			.order{
 				width: 100%;
@@ -380,6 +405,20 @@ nav{
 					color:#666;
 					margin-left:30px;
 				}
+				.btn-mode-map {
+					float:right;
+					margin-top: 5px;
+					margin-right: 10px;
+				    background: #fff url(https://p.ssl.qhimg.com/t01c9ef4268ff127a67.png) no-repeat 10px 0;
+				    border: 1px solid #DBDBDB;
+				    display: inline-block;
+				    font-size: 14px;
+				    height: 28px;
+				    line-height: 28px;
+				    padding: 0 10px 0 35px;
+				    width: auto;
+				    color: #666;
+				}
 			}
 		}
 		.shop-right{
@@ -396,40 +435,52 @@ nav{
 				font-size:20px;
 				border-bottom:1px solid #e6e6e6;
 			}
-			ul{
+			li{
 				width:100%;
 				height:93px;
 				border-bottom: 1px solid #dfdfe1;
 				padding-top: 20px;
 				box-sizing: border-box;
-				li{
-					float: left;
+				display: flex;
+				.sho1{
+					flex:left;
+					width: 25px;
+					height: 25px;
+					border-radius: 50%;
+					text-align: center;
+					line-height: 25px;
+					color: #666;
+					margin-top: 15px;
+					margin-left: 15px;
+					border: 2px solid #666;
+				}
+				.sho2{
+					flex:left;
+					img{
+						width: 51px;
+						height: 51px;
+						margin-left: 16px;
+						border: 1px solid #e6e6e6;
+					}
 				}
 				.soo1{
 					width:150px;
 					height: 50px;
 					margin-left: 6px;
-					font-size: 11px;
-					line-height: 24px;
-				}
-			}
-			.sho1{
-				width: 25px;
-				height: 25px;
-				border-radius: 50%;
-				text-align: center;
-				line-height: 25px;
-				color: #666;
-				margin-top: 15px;
-				margin-left: 15px;
-				border: 2px solid #666;
-			}
-			.sho2{
-				img{
-					width: 51px;
-					height: 51px;
-					margin-left: 16px;
-					border: 1px solid #e6e6e6;
+					font-size: 14px;
+					color:#888;
+					cursor: pointer;
+					.na1{
+						color:#185;
+						width:140px;
+						overflow: hidden;
+						white-space: nowrap;
+						font-weight: 300px;
+						line-height: 28px;
+						&:hover{
+							text-decoration: underline;
+						}
+					}
 				}
 			}
 		}
@@ -885,20 +936,16 @@ nav{
 	}
 }
 /* 店铺*/
-.dianpu ul{
+.dianpu li{
 	width:100%;
 	height:132px;
 	border-bottom: 1px solid #dfdfe1;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	box-sizing: border-box;
-	li{
-		float: left;
-		p{
-			line-height: 32px;
-		}
-	}
+	display:flex;
 	.sh1 {
+		flex: left;
 		img{
 			width: 90px;
 			height: 90px;
@@ -906,28 +953,58 @@ nav{
 		}
 	}
 	.sh2{
-		width:570px;
+		flex: left;
+		width:390px;
 		margin-left: 10px;
-		overflow: hidden;
 		font-size: 14px;
-	}
-	.s4{
-		display: inline-block;
-		margin-left: 400px;
-		width: 140px;
+		.s1{
+			font-size: 14px;
+			line-height: 34px;
+			.s2{
+				font-weight: 300;
+				color: #185;
+			}
+			.s3{
+				color: #888;
+				margin-left:8px;
+				font-weight: 400;
+			}
+		}
+		.s4{
+			line-height: 31px;
+			width: 390px;
+			color: #888;
+			overflow: hidden; /*自动隐藏文字*/
+   	 		text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    		white-space: nowrap;/*强制不换行*/
+		}
 	}
 	.sh3{
+		flex:left;
 		width: 140px;
-		height: 40px;
-		border: 1px solid #185;
+		color: #888;
+		margin-left: 60px;
+		font-size: 14px;
+		p{
+			line-height: 31px;
+			img{
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+		}
+	}
+	.shopping{
+		flex:left;
+		width:140px;
+		height:40px;
+		border:1px solid #185;
+		color:#185;
 		text-align: center;
 		line-height: 40px;
-		margin-left: 70px;
-		margin-top: 30px;
-		display:none;
-		a{
-			color: #185;
-		}
+		font-size: 18px;
+		margin-top: 25px;
+		margin-left: 45px;
+		display: none;
 	}
 }
 .huanye{
@@ -944,6 +1021,22 @@ nav{
 		line-height:37px;
 		background-color:#fff;
 		margin-left:4px;
-		margin-top:19px;
+		cursor: pointer;
+	}
+	.past,.topy{
+		display:inline-block;
+		width:90px;
+		height:37px;
+		border:1px solid #ddd;
+		text-align:center;
+		line-height:37px;
+		background-color:#fff;
+		margin-left:4px;
+		cursor: pointer;
+	}
+	.topy{
+		display: block;
+		margin-top: 0px;
+		margin-left: 85px;
 	}
 }
